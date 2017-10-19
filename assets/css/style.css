@@ -1,0 +1,13 @@
+.boxed {
+	margin-top:10px; /* take this out later */
+	border: 1px solid green ;
+	background-color: green;
+	color: white;
+	margin-right: 50%;
+	margin-left:2%;
+}
+
+.gem-buttons {
+	width: 4em;
+	height: 4em;
+}

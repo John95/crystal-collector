@@ -21,7 +21,6 @@ for (var i = 0; i < 4; i++) {
 	buttonGen = 1 + Math.floor(Math.random() * (20));
 	gemsArr.push(buttonGen);
 	//console.log(gemsArr);
-
 }
 console.log(gemsArr);
 
@@ -128,7 +127,7 @@ function start() {
         winCounter++;
         winSound.play();
         // checks if wins is even
-        if (isEven(lossCounter)){
+        if (isEven(winCounter)){
             $("#result").text("You did it! You retrieved the crystals from"
             + " the Crystal Cavern, or as it is commonly called by the locals,"
             + " The Cavern of Death. As you exit the cave you expect to be"

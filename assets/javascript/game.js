@@ -3,6 +3,13 @@ $(document).ready(function(){
 // hides an element on html
 $("#hide").hide();
 
+// defines win and lose audio that plays
+var winSound = document.createElement("audio");
+winSound.setAttribute("src", "assets/music/win.mp3");
+
+var loseSound = document.createElement("audio");
+loseSound.setAttribute("src", "assets/music/lose.mp3");
+
 var numberToGuess = Math.floor(Math.random() * (100-30)) + 30;
 $('#number-to-guess').text(numberToGuess);
 var buttonGen;
@@ -98,6 +105,7 @@ function start() {
     if (yourScore > numberToGuess) {
         console.log("your score has passed the number you're guessing.");
         lossCounter++;
+        loseSound.play();
         // checks if losses is even
         if (isEven(lossCounter)){
             $("#result").text("You took too many! CRACK! The cave comes"
@@ -118,6 +126,7 @@ function start() {
     } else if (yourScore === numberToGuess){
         console.log("your score is equal to the number you're guessing.");
         winCounter++;
+        winSound.play();
         // checks if wins is even
         if (isEven(lossCounter)){
             $("#result").text("You did it! You retrieved the crystals from"

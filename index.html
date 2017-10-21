@@ -16,14 +16,15 @@
 			<div class="row">
 				<div class="col-md-12 col-xs-12">
 					<div id="title" class="boxed">
-						<div class="h1">
+						<div class="h1 text-center">
 							Crystal Collector
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-6 col-xs-12">
+				<div class="col-md-2 col-xs-0"></div>
+				<div class="col-md-8 col-xs-12">
 					<div id="instructions" class="boxed">
 						<div class="panel panel-default">
 							<div class="panel-body">Each crystal is worth an unknown amount until you take one. The red, the blue, the green, and the clear. They are all worth something different each round. <br><br>
@@ -35,22 +36,21 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-md-6 col-xs-12">
+			</div>
+			<div class="row">
+				<div class="col-md-2 col-xs-0"></div>
+				<div class="col-md-8 col-xs-12">
 					<div class="text-center h2">
 						<div>
 							<p>You may take exactly <span id="number-to-guess" class="boxed"></span> crystals</p>
 						</div>
 					</div>
 					<hr>
-					<div class="text-center h2">
-						<div id="wins-losses" class="boxed">
-							<p>Wins: <span id="wins"></span></p>
-							<p>Losses: <span id="losses"></span></p>
+					<div id="story">
+						<div class="panel panel-default" id="hide">
+							<div class="panel-body"><span id="result" class="h3"></span></div>
 						</div>
-					</div>
-
-					<div class="panel panel-default" id="hide">
-						<div class="panel-body"><span id="result"></span></div>
+						<!-- <div id="a-line"></div> -->
 					</div>
 				</div>
 			</div>
@@ -71,6 +71,16 @@
 					<div class="text-center">
 						<div id="score" class="boxed h2">
 							Your Crystals: <span id="display"></span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="text-center h2">
+						<div id="wins-losses" class="boxed">
+							<p>Wins: <span id="wins"></span></p>
+							<p>Losses: <span id="losses"></span></p>
 						</div>
 					</div>
 				</div>

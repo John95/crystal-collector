@@ -2,6 +2,7 @@ $(document).ready(function(){
 
 // hides an element on html
 $("#hide").hide();
+//$("#instructions").hide();
 
 // defines win and lose audio that plays
 var winSound = document.createElement("audio");
@@ -43,6 +44,10 @@ redGem.attr("data-gem", gemsArr[2]);
 
 var greenGem = $("#green-gem");
 greenGem.attr("data-gem", gemsArr[3]);
+
+$("#gem-buttons").on("click", function() {
+    $("#instructions").hide();
+});
 
 function reset() {
     numberToGuess = Math.floor(Math.random() * (100-30)) + 30;
@@ -109,8 +114,8 @@ function start() {
         if (isEven(lossCounter)){
             $("#result").text("You took too many! CRACK! The cave comes"
             +" crashing down. Rocks spilling from the cave ceiling. You"
-            + " can barely hear large boulders scrape against one another."
-            + " and took your life with it. A giant rock ball comes from"
+            + " can barely hear as large boulders scrape against one another."
+            + " A giant rock ball comes from"
             + " behind and flattens you. As you fall unconscious, you see"
             + " a faint light. 'You must try again...'");
         } else {
@@ -119,6 +124,7 @@ function start() {
             + " impaled by a falling crystal shard. As your vision blacks out"
             + " a chilling voice whispers 'You still owe me money...'");
         }
+        //$("#a-line").html("<hr>");
         $("#losses").text(lossCounter);
         $("#hide").show();
         reset();
@@ -128,6 +134,14 @@ function start() {
         winSound.play();
         // checks if wins is even
         if (isEven(winCounter)){
+            $("#result").text("You can't go back out the front... THEY will get"
+            + " you. If they get to you, bad things could happen. You search for"
+            + " another way out of this forsaken cavern. You see an archway with"
+            + " a glow casting light through into the cave. Excitedly you rush"
+            + " through. \"Oh sunlight, never have I been so happy to see you--\""
+            + " This was no sunlight. It is another magic crystal room, and to"
+            + " get out, you have to collect more crystals...");
+            } else {
             $("#result").text("You did it! You retrieved the crystals from"
             + " the Crystal Cavern, or as it is commonly called by the locals,"
             + " The Cavern of Death. As you exit the cave you expect to be"
@@ -136,14 +150,6 @@ function start() {
             + " black suit waiting for you. \"Not this again...\" you mutter."
             + " \"You still owe the boss millions\" said the man. \"We'll hold"
             + " onto this while you go in and get some more...\"");
-        } else {
-            $("#result").text("You can't go back out the front... THEY will get"
-            + " you. If they get to you, bad things could happen. You search for"
-            + " another way out of this forsaken cavern. You see an archway with"
-            + " a glow casting light through into the cave. Excitedly you rush"
-            + " through. \"Oh sunlight, never have I been so happy to see you--\""
-            + " This was no sunlight. It is another magic crystal room, and to"
-            + " get out, you have to collect more crystals...");
         }
         $("#wins").text(winCounter);
         $("#hide").show();

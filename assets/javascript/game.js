@@ -1,13 +1,11 @@
 $(document).ready(function(){
 
-// hides an element on html
+// initially hides story element on html
 $("#story").hide();
-//$("#instructions").hide();
 
 // defines win and lose audio that plays
 var winSound = document.createElement("audio");
 winSound.setAttribute("src", "assets/music/win.mp3");
-
 var loseSound = document.createElement("audio");
 loseSound.setAttribute("src", "assets/music/lose.mp3");
 
@@ -99,60 +97,68 @@ function start() {
         console.log(greenGem.attr("data-gem"));
     });
 
-    $(".gem-buttons").on("click", function() {
- 
-// ----------------------------------------------------    
-    if (yourScore > numberToGuess) {
-        console.log("your score has passed the number you're guessing.");
-        lossCounter++;
-        loseSound.play();
-        // checks if losses is even
-        if (isEven(lossCounter)){
-            $("#result").text("You took too many! CRACK! The cave comes"
-            +" crashing down. Rocks spilling from the cave ceiling. You"
-            + " can barely hear as large boulders scrape against one another."
-            + " A giant rock ball comes from"
-            + " behind and flattens you. As you fall unconscious, you see"
-            + " a faint light. 'You must try again...'");
-        } else {
-            $("#result").text("You took too many! The cave rumbles."
-            + " You hear a SNAP above you. As you look up, you are"
-            + " impaled by a falling crystal shard. As your vision blacks out"
-            + " a chilling voice whispers 'You still owe me money...'");
-        }
-        //$("#a-line").html("<hr>");
-        $("#losses").text(lossCounter);
-        $("#instructions").hide();
-        $("#story").show();
-        reset();
-    } else if (yourScore === numberToGuess){
-        console.log("your score is equal to the number you're guessing.");
-        winCounter++;
-        winSound.play();
-        // checks if wins is even
-        if (isEven(winCounter)){
-            $("#result").text("You can't go back out the front... THEY will get"
-            + " you. If they get to you, bad things could happen. You search for"
-            + " another way out of this forsaken cavern. You see an archway with"
-            + " a glow casting light through into the cave. Excitedly you rush"
-            + " through. \"Oh sunlight, never have I been so happy to see you--\""
-            + " This was no sunlight. It is another magic crystal room, and to"
-            + " get out, you have to collect more crystals...");
+// ----------------------------------------------------
+    $(".gem-buttons").on("click", function() {    
+        if (yourScore > numberToGuess) {
+            console.log("your score has passed the number you're guessing.");
+            lossCounter++;
+            loseSound.play();
+            // checks if losses is even
+            if (isEven(lossCounter)){
+                $("#result").text("You took too many! CRACK! The cave comes"
+                +" crashing down. Rocks spilling from the cave ceiling. You"
+                + " can barely hear as large boulders scrape against one another."
+                + " A giant rock ball comes from"
+                + " behind and flattens you. As you fall unconscious, you see"
+                + " a faint light. 'You must try again...'");
             } else {
-            $("#result").text("You did it! You retrieved the crystals from"
-            + " the Crystal Cavern, or as it is commonly called by the locals,"
-            + " The Cavern of Death. As you exit the cave you expect to be"
-            + " greeted by cheering crowds. What an acheivement! As soon as"
-            + " your eyes adjust to the sunlight you see a man dressed in a"
-            + " black suit waiting for you. \"Not this again...\" you mutter."
-            + " \"You still owe the boss millions\" said the man. \"We'll hold"
-            + " onto this while you go in and get some more...\"");
+                $("#result").text("You took too many! The cave rumbles."
+                + " You hear a SNAP above you. As you look up, you are"
+                + " impaled by a falling crystal shard. As your vision blacks out"
+                + " a chilling voice whispers 'You still owe me money...'");
+            }
+            $("#losses").text(lossCounter);
+            $("#instructions").hide();
+            $("#story").show();
+
+            // WANTED TO MAKE A SMOOTH BLIP TO NOTIFY USER THAT
+            // NEW TEXT APPEARED. IT'S NOT GOOD ENOUGH TO BE 
+            // IMPLEMENTED YET THOUGH.
+            // $("#story").addClass("red-bg");
+            // setTimeout(function() {
+            //     $("#story").removeClass("red-bg");
+            // }, 1000*.5);
+            
+            
+            reset();
+        } else if (yourScore === numberToGuess){
+            console.log("your score is equal to the number you're guessing.");
+            winCounter++;
+            winSound.play();
+            // checks if wins is even
+            if (isEven(winCounter)){
+                $("#result").text("You can't go back out the front... THEY will get"
+                + " you. If they get to you, bad things could happen. You search for"
+                + " another way out of this forsaken cavern. You see an archway with"
+                + " a glow casting light through into the cave. Excitedly you rush"
+                + " through. \"Oh sunlight, never have I been so happy to see you--\""
+                + " This was no sunlight. It is another magic crystal room, and to"
+                + " get out, you have to collect more crystals...");
+                } else {
+                $("#result").text("You did it! You retrieved the crystals from"
+                + " the Crystal Cavern, or as it is commonly called by the locals,"
+                + " The Cavern of Death. As you exit the cave you expect to be"
+                + " greeted by cheering crowds. What an acheivement! As soon as"
+                + " your eyes adjust to the sunlight you see a man dressed in a"
+                + " black suit waiting for you. \"Not this again...\" you mutter."
+                + " \"You still owe the boss millions\" said the man. \"We'll hold"
+                + " onto this while you go in and get some more...\"");
+            }
+            $("#wins").text(winCounter);
+            $("#instructions").hide();
+            $("#story").show();
+            reset();
         }
-        $("#wins").text(winCounter);
-        $("#instructions").hide();
-        $("#story").show();
-        reset();
-    }
     })
 }
 

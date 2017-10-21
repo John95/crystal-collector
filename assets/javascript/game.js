@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
 // hides an element on html
-$("#hide").hide();
+$("#story").hide();
 //$("#instructions").hide();
 
 // defines win and lose audio that plays
@@ -44,10 +44,6 @@ redGem.attr("data-gem", gemsArr[2]);
 
 var greenGem = $("#green-gem");
 greenGem.attr("data-gem", gemsArr[3]);
-
-$("#gem-buttons").on("click", function() {
-    $("#instructions").hide();
-});
 
 function reset() {
     numberToGuess = Math.floor(Math.random() * (100-30)) + 30;
@@ -126,7 +122,8 @@ function start() {
         }
         //$("#a-line").html("<hr>");
         $("#losses").text(lossCounter);
-        $("#hide").show();
+        $("#instructions").hide();
+        $("#story").show();
         reset();
     } else if (yourScore === numberToGuess){
         console.log("your score is equal to the number you're guessing.");
@@ -152,7 +149,8 @@ function start() {
             + " onto this while you go in and get some more...\"");
         }
         $("#wins").text(winCounter);
-        $("#hide").show();
+        $("#instructions").hide();
+        $("#story").show();
         reset();
     }
     })

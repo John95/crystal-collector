@@ -8,4 +8,4 @@ https://john95.github.io/crystal-collector/
 To use this offline just run index.html through a browser by right clicking on the file and clicking 'Open with...' and selecting your browser of choice. 
 
 ## Further development
-This program makes heavy use of jQuery and Bootstrap. To add to the story or develop new features for the game, start by going to game.js in the assets/javascript folder. That is where all the logic is currently. To add to the front end, modify index.html's bootstrap, or edit style.css under the assets/css folder.
+This program makes heavy use of jQuery and Bootstrap. To add to the story or develop new features for the game, start by going to game.js in the assets/javascript folder. That is where all the logic is currently. To add to the front end, modify index.html's Bootstrap styling, or edit style.css under the assets/css folder.

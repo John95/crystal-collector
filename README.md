@@ -4,7 +4,7 @@ Crystal Collector. Escape the crystal cavern and those strange men chasing after
 ## Play it for yourself!
 https://john95.github.io/crystal-collector/
 
-## How to use offline
+### How to use offline
 To use this offline just run index.html through a browser by right clicking on the file and clicking 'Open with...' and selecting your browser of choice. 
 
 ## Continued Development

@@ -5,9 +5,9 @@ $("#story").hide();
 
 // defines win and lose audio that plays
 var winSound = document.createElement("audio");
-winSound.setAttribute("src", "assets/music/win.mp3");
+winSound.setAttribute("src", "/music/win.mp3");
 var loseSound = document.createElement("audio");
-loseSound.setAttribute("src", "assets/music/lose.mp3");
+loseSound.setAttribute("src", "/music/lose.mp3");
 
 var numberToGuess = Math.floor(Math.random() * (100-30)) + 30;
 $('#number-to-guess').text(numberToGuess);

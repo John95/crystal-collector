@@ -1,0 +1,23 @@
+{
+  "name": "crystal-collector",
+  "version": "1.0.0",
+  "description": "Crystal Collector. Escape the crystal cavern and those strange men chasing after you by collecting crystals!",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/John95/crystal-collector.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/John95/crystal-collector/issues"
+  },
+  "homepage": "https://github.com/John95/crystal-collector#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}

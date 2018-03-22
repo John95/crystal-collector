@@ -2,7 +2,8 @@
 Crystal Collector. Escape the crystal cavern and those strange men chasing after you by collecting crystals!
 
 ## Play it for yourself!
-https://john95.github.io/crystal-collector/
+https://acorn-glen.github.io/crystal-collector/
+(Demo is forked to acron-glen for github pages version of website. John95 currently only works on deployed servers due to the server code.)
 
 ### How to use offline
 To use this offline just run index.html through a browser by right clicking on the file and clicking 'Open with...' and selecting your browser of choice. 
